@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppControllerActivator",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppDependencyResolver", "WebAppDependencyResolver\WebAppDependencyResolver.csproj", "{0ED2B620-F4C5-4B2E-B1F2-3BCCCA828FA7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Controller", "3.Controller", "{1BAFAA80-8688-483E-90ED-0DBD5F50B46C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.MiniMvc", "2.MiniMvc", "{608516B8-3FD1-4479-B451-EF0D09CDB5BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +40,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A1756279-7B30-4667-BEAB-3CDA10462AC4} = {608516B8-3FD1-4479-B451-EF0D09CDB5BB}
+		{0B1EB1B1-F127-45D9-8724-79AAF8214AD8} = {1BAFAA80-8688-483E-90ED-0DBD5F50B46C}
+		{7E9FF0EF-1564-4B2A-872B-F805CC7A1966} = {1BAFAA80-8688-483E-90ED-0DBD5F50B46C}
+		{0ED2B620-F4C5-4B2E-B1F2-3BCCCA828FA7} = {1BAFAA80-8688-483E-90ED-0DBD5F50B46C}
 	EndGlobalSection
 EndGlobal
