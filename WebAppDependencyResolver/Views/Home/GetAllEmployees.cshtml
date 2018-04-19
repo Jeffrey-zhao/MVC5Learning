@@ -1,0 +1,23 @@
+﻿
+@using WebAppDependencyResolver.Models
+
+@model IEnumerable<Employee>
+
+@{
+    ViewBag.Title = "GetAllEmployees";
+}
+
+<h2>GetAllEmployees</h2>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    @foreach (Employee item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+        </tr>
+    }
+</table>
