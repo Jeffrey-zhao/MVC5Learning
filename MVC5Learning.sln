@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniMvc", "2.MiniMvc\MiniMvc\MiniMvc.csproj", "{A1756279-7B30-4667-BEAB-3CDA10462AC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniMvc", "2.Mvc\MiniMvc\MiniMvc.csproj", "{A1756279-7B30-4667-BEAB-3CDA10462AC4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppController", "3.Controller\WebAppController\WebAppController.csproj", "{0B1EB1B1-F127-45D9-8724-79AAF8214AD8}"
 EndProject
@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppDependencyResolver", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Controller", "3.Controller", "{1BAFAA80-8688-483E-90ED-0DBD5F50B46C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.MiniMvc", "2.MiniMvc", "{608516B8-3FD1-4479-B451-EF0D09CDB5BB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Mvc", "2.Mvc", "{608516B8-3FD1-4479-B451-EF0D09CDB5BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
