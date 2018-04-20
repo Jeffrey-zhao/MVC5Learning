@@ -1,0 +1,20 @@
+﻿@model WebAppHtmlTemplate.Models.DemoModel2
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+Edit Templates:
+@Html.EditorForModel()
+<hr/>
+不用模板表示对象属性
+@Html.EditorFor(m=>m.Address)
+<br />
+<hr />
+Display Templates:
+@Html.DisplayForModel()
+<hr />
+不用模板表示对象属性
+@Html.DisplayFor(m => m.Address)
