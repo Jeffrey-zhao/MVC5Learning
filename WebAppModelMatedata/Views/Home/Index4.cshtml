@@ -16,7 +16,7 @@
         @foreach (Expression<Func<ModelMetadata, object>> item in Model.PropertyAccessors)
         {
             MemberExpression member = item.Body as MemberExpression;
-            if (member != null)
+            if (member == null)
             {
                 UnaryExpression unary = item.Body as UnaryExpression;
                 if (unary != null)
