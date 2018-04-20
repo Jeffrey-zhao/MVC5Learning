@@ -1,0 +1,47 @@
+﻿@using WebAppModelMatedata.Customs
+@using System.Linq.Expressions
+@using System.Reflection
+
+@model ModelMetadataInfo
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <tr>
+        <th>Property</th>
+        @foreach (Expression<Func<ModelMetadata, object>> item in Model.PropertyAccessors)
+        {
+            MemberExpression member = item.Body as MemberExpression;
+            if (member != null)
+            {
+                UnaryExpression unary = item.Body as UnaryExpression;
+                if (unary != null)
+                {
+                    member = (MemberExpression)unary.Operand;
+                }
+            }
+            else
+            {
+                member = (MemberExpression)((UnaryExpression)item.Body).Operand;
+            }
+            PropertyInfo property = (PropertyInfo)member.Member;
+            <th>@property.Name</th>
+        }
+    </tr>
+    @foreach (ModelMetadata metadata in Model.ModelMetadata.Properties)
+    {
+        <tr>
+            <td>
+                @metadata.PropertyName
+            </td>
+            @foreach (Expression<Func<ModelMetadata, object>> item in Model.PropertyAccessors)
+                {
+                <td>@(item.Compile()(metadata) ?? "N/A")</td>
+            }
+        </tr>
+    }
+</table>
