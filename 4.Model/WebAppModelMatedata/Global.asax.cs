@@ -17,7 +17,11 @@ namespace WebAppModelMatedata
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
             //for IMetadataAware
-            DisplayTextAttribute.SetResourceType(typeof(Resources));
+            //DisplayTextAttribute.SetResourceType(typeof(Resources));
+
+            //not IMetadataAware
+            DisplayTextNoIMetadataAwareAttribute.SetResourceType(typeof(Resources));
+            ModelMetadataProviders.Current = new ExtendedDataAnnotationProvider();
         }
     }
 }

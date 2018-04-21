@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppModelMatedata", "4.Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppHtmlTemplate", "4.Model\WebAppHtmlTemplate\WebAppHtmlTemplate.csproj", "{0BED1592-F665-4571-B142-6B7682153536}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppModelMetadataDetail", "WebAppModelMetadataDetail\WebAppModelMetadataDetail.csproj", "{EB33F6AB-2B2E-40BF-BB79-26CB609E1093}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{0BED1592-F665-4571-B142-6B7682153536}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BED1592-F665-4571-B142-6B7682153536}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BED1592-F665-4571-B142-6B7682153536}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB33F6AB-2B2E-40BF-BB79-26CB609E1093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB33F6AB-2B2E-40BF-BB79-26CB609E1093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB33F6AB-2B2E-40BF-BB79-26CB609E1093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB33F6AB-2B2E-40BF-BB79-26CB609E1093}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,5 +68,6 @@ Global
 		{0ED2B620-F4C5-4B2E-B1F2-3BCCCA828FA7} = {1BAFAA80-8688-483E-90ED-0DBD5F50B46C}
 		{6A2E99EE-B1BA-4B60-883F-DCEC3B97DE21} = {8E845EA8-0AD0-4F59-AFC4-97163CD8C7C0}
 		{0BED1592-F665-4571-B142-6B7682153536} = {8E845EA8-0AD0-4F59-AFC4-97163CD8C7C0}
+		{EB33F6AB-2B2E-40BF-BB79-26CB609E1093} = {8E845EA8-0AD0-4F59-AFC4-97163CD8C7C0}
 	EndGlobalSection
 EndGlobal

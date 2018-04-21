@@ -75,5 +75,10 @@ namespace WebAppModelMatedata.Controllers
         {
             return View(model);
         }
+
+        public ActionResult Employee2(Employee2 model)
+        {
+            return View(model);
+        }
     }
 }

@@ -117,14 +117,22 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DataTypeController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PointController.cs" />
     <Compile Include="Controllers\TemplateController.cs" />
+    <Compile Include="Customs\DefaultListProvider.cs" />
+    <Compile Include="Customs\ListAttribute.cs" />
+    <Compile Include="Customs\ListControlExtensions.cs" />
+    <Compile Include="Customs\ListProviders.cs" />
+    <Compile Include="Customs\IListProvider.cs" />
+    <Compile Include="Customs\ListItem.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DemoModel.cs" />
     <Compile Include="Models\DemoModel2.cs" />
+    <Compile Include="Models\DemoModel3.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Trangle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,6 +146,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Point\DisplayTemplates\PointInfo.cshtml" />
     <Content Include="Views\Point\EditorTemplates\PointInfo.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ListBox.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DropdownList.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CheckBoxList.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\RadioButtonList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -148,7 +161,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Shared\DisplayTemplates\" />
-    <Folder Include="Views\Shared\EditorTemplates\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -161,7 +173,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>37006</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

@@ -12,7 +12,7 @@ namespace WebAppHtmlTemplate.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            Employee model = new Employee
+            DemoModel3 model = new DemoModel3
             {
                 Name = "jeffrey",
                 Department = "dev",
