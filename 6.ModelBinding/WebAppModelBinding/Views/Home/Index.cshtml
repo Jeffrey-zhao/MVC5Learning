@@ -1,0 +1,28 @@
+﻿@model NameValueCollectionValueProvider
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<table>
+    <tr>
+        <th colspan="4">foo</th>
+    </tr>
+    @foreach (var item in Model.GetKeysFromPrefix("foo"))
+    {
+        <tr>
+            <td>@item.Key</td>
+            <td>@item.Value</td>
+        </tr>
+    }
+    <tr>
+        <th colspan="4">foo.Address</th>
+    </tr>
+    @foreach (var item in Model.GetKeysFromPrefix("foo.Address"))
+    {
+        <tr>
+            <td>@item.Key</td>
+            <td>@item.Value</td>
+        </tr>
+    }
+</table>
