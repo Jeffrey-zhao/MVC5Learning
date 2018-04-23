@@ -1,0 +1,20 @@
+﻿@using WebAppMyModelBinder.Models
+@model IDictionary<string, Contact>
+@{
+    ViewBag.Title = "InvokeAction";
+}
+
+<h2>InvokeAction</h2>
+<table>
+    <tr><th>Name</th><th>Value</th></tr>
+    @foreach (var item in Model)
+    {
+        <tr><td>@item.Key|Name</td><td>@item.Value.Name</td></tr>
+        <tr><td>@item.Key|PhoneNo</td><td>@item.Value.PhoneNo</td></tr>
+        <tr><td>@item.Key|EmailAddress</td><td>@item.Value.EmailAddress</td></tr>
+        <tr><td>@item.Key|Address.Province</td><td>@item.Value.Address.Province</td></tr>
+        <tr><td>@item.Key|Address.City</td><td>@item.Value.Address.City</td></tr>
+        <tr><td>@item.Key|Address.District</td><td>@item.Value.Address.District</td></tr>
+        <tr><td>@item.Key|Address.Street</td><td>@item.Value.Address.Street</td></tr>
+    }
+</table>

@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B0188FE8-0448-4C32-8407-6B1B0EF831A6}</ProjectGuid>
+    <ProjectGuid>{FD3A0A0B-F483-40F0-B8FC-A51F7099942D}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebAppModelBinding</RootNamespace>
-    <AssemblyName>WebAppModelBinding</AssemblyName>
+    <RootNamespace>WebAppMyModelBinder</RootNamespace>
+    <AssemblyName>WebAppMyModelBinder</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -76,7 +76,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -135,32 +134,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\BinderController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Customs\CustomModelBinder.cs" />
-    <Compile Include="Customs\HttpHeaderValueProviderFactory.cs" />
+    <Compile Include="Controllers\BindSimpleModelController.cs" />
+    <Compile Include="Controllers\BindComplexModelController.cs" />
+    <Compile Include="Customs\ControllerExtensions.cs" />
+    <Compile Include="Customs\MyDefaultModelBinder2.cs" />
+    <Compile Include="Customs\MyDefaultModelBinder1.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CommonHttpHeaders.cs" />
-    <Compile Include="Models\Contract.cs" />
-    <Compile Include="Models\CustomModel.cs" />
-    <Compile Include="Models\DemoModel.cs" />
+    <Compile Include="Models\Contact.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\BindSimpleModel\Arguments.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Home\Index2.cshtml" />
-    <Content Include="Views\Home\Index3.cshtml" />
-    <Content Include="Views\Binder\Index.cshtml" />
+    <Content Include="Views\BindComplexModel\Arguments.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -184,9 +182,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>10412</DevelopmentServerPort>
+          <DevelopmentServerPort>2524</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:10412/</IISUrl>
+          <IISUrl>http://localhost:2524/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -59,4 +59,19 @@ namespace WebAppModelBinding.Customs
             return null;
         }
     }
+
+    public class DemoModel1ModelBinder : IModelBinder
+    {
+        public object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class DemoModel2ModelBinder : IModelBinder
+    {
+        public object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

@@ -22,9 +22,15 @@ namespace WebAppModelBinding
             //ModelBinderProviders.BinderProviders.Add(new FoobarModelBinderProvider());
 
             //test ModelBinderProviders 优先级高于  MddelBinders
-            ModelBinderProviders.BinderProviders.Add(new FoobModelBinderProvider());
-            ModelBinders.Binders.Add(typeof(Foo), new BazModelBinder());
-            ModelBinders.Binders.Add(typeof(Bar), new BarModelBinder());
+            //ModelBinderProviders.BinderProviders.Add(new FoobModelBinderProvider());
+            //ModelBinders.Binders.Add(typeof(Foo), new BazModelBinder());
+            //ModelBinders.Binders.Add(typeof(Bar), new BarModelBinder());
+
+            //DemoModel
+            // 
+            //ModelBinder 优先级
+            // CustomModelBinderAttritube(parameter) > ModelBinderProviers > ModelBinders 
+            // >CustomModelBinderAttritube(Parameter Type) > DefaultModelBinder
         }
     }
 }

@@ -31,6 +31,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.ModelBinding", "6.ModelBi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppModelBinding", "6.ModelBinding\WebAppModelBinding\WebAppModelBinding.csproj", "{B0188FE8-0448-4C32-8407-6B1B0EF831A6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7.MyModelBinder", "7.MyModelBinder", "{9D55312D-51F4-4303-B78F-2730563252BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppMyModelBinder", "7.MyModelBinder\WebAppMyModelBinder\WebAppMyModelBinder.csproj", "{FD3A0A0B-F483-40F0-B8FC-A51F7099942D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +77,10 @@ Global
 		{B0188FE8-0448-4C32-8407-6B1B0EF831A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0188FE8-0448-4C32-8407-6B1B0EF831A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0188FE8-0448-4C32-8407-6B1B0EF831A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD3A0A0B-F483-40F0-B8FC-A51F7099942D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD3A0A0B-F483-40F0-B8FC-A51F7099942D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD3A0A0B-F483-40F0-B8FC-A51F7099942D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD3A0A0B-F483-40F0-B8FC-A51F7099942D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,5 +95,6 @@ Global
 		{EB33F6AB-2B2E-40BF-BB79-26CB609E1093} = {8E845EA8-0AD0-4F59-AFC4-97163CD8C7C0}
 		{D84ADD26-8185-46D7-B52C-0D2AEB767298} = {522BC9DA-E1AC-4D33-854B-2ABA4D116F93}
 		{B0188FE8-0448-4C32-8407-6B1B0EF831A6} = {23B06EF9-1B0B-458F-ADB7-B3F6FC01B77A}
+		{FD3A0A0B-F483-40F0-B8FC-A51F7099942D} = {9D55312D-51F4-4303-B78F-2730563252BA}
 	EndGlobalSection
 EndGlobal

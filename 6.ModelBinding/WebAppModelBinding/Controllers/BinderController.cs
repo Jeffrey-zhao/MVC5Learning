@@ -7,6 +7,7 @@ using System.Data.Linq;
 using System.Threading;
 using System.Reflection;
 using WebAppModelBinding.Models;
+using WebAppModelBinding.Customs;
 
 namespace WebAppModelBinding.Controllers
 {
@@ -26,7 +27,8 @@ namespace WebAppModelBinding.Controllers
         {
             ControllerDescriptor controllerDescriptor = new ReflectedControllerDescriptor(typeof(BinderController));
             //ActionDescriptor actionDescriptor = controllerDescriptor.FindAction(ControllerContext, "DemoAction");
-            ActionDescriptor actionDescriptor = controllerDescriptor.FindAction(ControllerContext, "TestAction");
+            //ActionDescriptor actionDescriptor = controllerDescriptor.FindAction(ControllerContext, "TestAction");
+            ActionDescriptor actionDescriptor = controllerDescriptor.FindAction(ControllerContext, "ModelAction");
             Dictionary<ParameterDescriptor, IModelBinder> binders = new Dictionary<ParameterDescriptor, IModelBinder>();
             foreach (ParameterDescriptor item in actionDescriptor.GetParameters())
             {
@@ -42,6 +44,14 @@ namespace WebAppModelBinding.Controllers
         }
 
         public void TestAction(Foo foo,Bar bar, Baz baz)
+        {
+            
+        }
+
+        public void ModelAction(
+            [ModelBinder(typeof(DemoModel2ModelBinder))]
+            DemoModel1 model1,
+            DemoModel2 model2)
         {
 
         }
