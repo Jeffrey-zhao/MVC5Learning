@@ -1,0 +1,16 @@
+﻿@model IDictionary<ParameterDescriptor, IModelBinder>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<table>
+    <tr><th>Parameter</th><th>ModelBinder</th></tr>
+    @foreach (var item in this.Model)
+    {
+        <tr>
+            <td>@item.Key.ParameterName|@item.Key.ParameterType</td>
+            <td>@item.Value.GetType().Name</td>
+        </tr>
+    }
+</table>
