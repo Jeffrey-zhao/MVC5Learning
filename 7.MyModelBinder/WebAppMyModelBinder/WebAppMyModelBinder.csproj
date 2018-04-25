@@ -134,10 +134,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BindDictionaryModelController.cs" />
+    <Compile Include="Controllers\BindCollectionIndexModelController.cs" />
+    <Compile Include="Controllers\BindCollectionModelController.cs" />
     <Compile Include="Controllers\BindSimpleModelController.cs" />
     <Compile Include="Controllers\BindComplexModelController.cs" />
     <Compile Include="Customs\ControllerExtensions.cs" />
     <Compile Include="Customs\MyDefaultModelBinder2.cs" />
+    <Compile Include="Customs\MyDefaultModelBinder5.cs" />
+    <Compile Include="Customs\MyDefaultModelBinder4.cs" />
+    <Compile Include="Customs\MyDefaultModelBinder3.cs" />
     <Compile Include="Customs\MyDefaultModelBinder1.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -148,9 +154,6 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\BindSimpleModel\Arguments.cshtml" />
@@ -159,6 +162,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\BindComplexModel\Arguments.cshtml" />
+    <Content Include="Views\BindCollectionModel\Arguments.cshtml" />
+    <Content Include="Views\BindCollectionIndexModel\Arguments.cshtml" />
+    <Content Include="Views\BindDictionaryModel\Arguments.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

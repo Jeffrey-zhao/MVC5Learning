@@ -5,10 +5,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.ComponentModel.DataAnnotations;
+using System.Collections;
+using System.Reflection;
 
 namespace WebAppMyModelBinder.Customs
 {
-    public class MyDefaultModelBinder2 : IModelBinder
+    public class MyDefaultModelBinder3 : IModelBinder
     {
         public object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
         {
@@ -43,7 +45,44 @@ namespace WebAppMyModelBinder.Customs
 
         private object CreateModel(ControllerContext controllerContext, ModelBindingContext bindingContext, Type modelType)
         {
+            if (modelType.IsGenericType)
+            {
+                Type genericTypeDefinition = modelType.GetGenericTypeDefinition();
+                if (new Type[] { typeof(IEnumerable<>), typeof(ICollection<>), typeof(IList<>) }.Any(type => type == genericTypeDefinition))
+                {
+                    return Activator.CreateInstance(typeof(List<>).MakeGenericType(modelType.GetGenericArguments()));
+                }
+            }
             return Activator.CreateInstance(modelType);
+        }
+
+        private static void CopyCollection<T>(ICollection<T> destination, IEnumerable source)
+        {
+            foreach (object item in source)
+            {
+                destination.Add(item is T ? (T)item : default(T));
+            }
+        }
+
+        private void Copy(Type elementType, object destination, object source)
+        {
+            MethodInfo copyMethod = typeof(MyDefaultModelBinder3).GetMethod("CopyCollection", BindingFlags.Static | BindingFlags.NonPublic);
+            copyMethod.MakeGenericMethod(elementType).Invoke(null, new object[] { destination, source });
+        }
+        private bool Match(Type type, Type typeToMatch)
+        {
+            if (type.IsGenericType && type.GetGenericTypeDefinition() == typeToMatch)
+            {
+                return true;
+            }
+            foreach (Type interfaceType in type.GetInterfaces())
+            {
+                if (interfaceType.IsGenericType && interfaceType.GetGenericTypeDefinition() == typeToMatch)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         private object BindComplexModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
         {
@@ -62,7 +101,6 @@ namespace WebAppMyModelBinder.Customs
 
         private void BindProperty(ControllerContext controllerContext, ModelBindingContext bindingContext, PropertyDescriptor propertyDescriptor)
         {
-            //属性一直为null，为什么？
             string prefix = (bindingContext.ModelName ?? "") + "." + (propertyDescriptor.Name ?? "");
             prefix = prefix.Trim('.');
             ModelMetadata metadata = bindingContext.PropertyMetadata[propertyDescriptor.Name];
@@ -87,6 +125,19 @@ namespace WebAppMyModelBinder.Customs
         private object BindSimpleModel(ControllerContext controllerContext, ModelBindingContext bindingContext, ValueProviderResult valueProviderResult)
         {
             SetModelState(bindingContext, valueProviderResult);
+            Type modelType = bindingContext.ModelType;
+            if (typeof(string) != modelType && this.Match(modelType, typeof(IEnumerable<>)))
+            {
+                Type arrayType = modelType.IsArray ? modelType : modelType.GetGenericArguments()[0].MakeArrayType();
+                object array = valueProviderResult.ConvertTo(arrayType);
+                if (bindingContext.ModelType.IsArray)
+                {
+                    return array;
+                }
+                object list = this.CreateModel(controllerContext, bindingContext, modelType);
+                this.Copy(modelType.GetGenericArguments()[0], list, array);
+                return list;
+            }
             return valueProviderResult.ConvertTo(bindingContext.ModelType);
         }
 
