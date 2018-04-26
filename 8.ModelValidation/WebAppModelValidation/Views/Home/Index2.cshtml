@@ -1,0 +1,23 @@
+﻿@model WebAppModelValidation.Models.Validatable.Person
+
+@{
+    ViewBag.Title = "Index2";
+}
+
+<h2>Index2</h2>
+@Html.ValidationSummary()
+@using (Html.BeginForm())
+{
+    <div>@Html.LabelFor(m => m.Name)</div>
+    <div>@Html.EditorFor(m => m.Name)</div>
+    <div>@Html.ValidationMessageFor(m => m.Name)</div>
+
+    <div>@Html.LabelFor(m => m.Gender)</div>
+    <div>@Html.EditorFor(m => m.Gender)</div>
+    <div>@Html.ValidationMessageFor(m => m.Gender)</div>
+
+    <div>@Html.LabelFor(m => m.Age)</div>
+    <div>@Html.EditorFor(m => m.Age)</div>
+    <div>@Html.ValidationMessageFor(m => m.Age)</div>
+    <input type="submit" value="保存" />
+}

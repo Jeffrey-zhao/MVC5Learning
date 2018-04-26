@@ -1,0 +1,13 @@
+﻿@model WebAppModelValidation.Models.Contact
+@{
+    ViewBag.Title = "Contact";
+}
+
+<h2>Contact</h2>
+
+@using (Html.BeginForm())
+{
+    <div>@Html.EditorForModel()</div>
+    <div>@Html.EditorFor(m => m.Address)</div>
+    <input type="submit" value="保存" />
+}

@@ -136,7 +136,7 @@ namespace WebAppMyModelBinder.Customs
 
         private void Copy(Type elementType, object destination, object source)
         {
-            MethodInfo copyMethod = typeof(MyDefaultModelBinder3).GetMethod("CopyCollection", BindingFlags.Static | BindingFlags.NonPublic);
+            MethodInfo copyMethod = typeof(MyDefaultModelBinder4).GetMethod("CopyCollection", BindingFlags.Static | BindingFlags.NonPublic);
             copyMethod.MakeGenericMethod(elementType).Invoke(null, new object[] { destination, source });
         }
         private bool Match(Type type, Type typeToMatch)

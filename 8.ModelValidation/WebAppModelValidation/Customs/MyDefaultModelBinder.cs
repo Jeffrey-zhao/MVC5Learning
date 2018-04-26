@@ -8,9 +8,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Collections;
 using System.Reflection;
 
-namespace WebAppMyModelBinder.Customs
+namespace WebAppModelValidation.Customs
 {
-    public class MyDefaultModelBinder5 : IModelBinder
+    public class MyDefaultModelBinder : IModelBinder
     {
         public object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
         {
@@ -145,7 +145,7 @@ namespace WebAppMyModelBinder.Customs
 
         private void Copy(Type keyType, Type valueType, object destination, IEnumerable<KeyValuePair<object, object>> source)
         {
-            MethodInfo copyMethod = typeof(MyDefaultModelBinder5).GetMethod("CopyDictionary", BindingFlags.Static | BindingFlags.NonPublic);
+            MethodInfo copyMethod = typeof(MyDefaultModelBinder).GetMethod("CopyDictionary", BindingFlags.Static | BindingFlags.NonPublic);
             copyMethod.MakeGenericMethod(keyType, valueType).Invoke(null, new object[] { destination, source });
         }
 
@@ -159,7 +159,7 @@ namespace WebAppMyModelBinder.Customs
 
         private void Copy(Type elementType, object destination, object source)
         {
-            MethodInfo copyMethod = typeof(MyDefaultModelBinder5).GetMethod("CopyCollection", BindingFlags.Static | BindingFlags.NonPublic);
+            MethodInfo copyMethod = typeof(MyDefaultModelBinder).GetMethod("CopyCollection", BindingFlags.Static | BindingFlags.NonPublic);
             copyMethod.MakeGenericMethod(elementType).Invoke(null, new object[] { destination, source });
         }
 
@@ -249,6 +249,14 @@ namespace WebAppMyModelBinder.Customs
             {
                 this.BindProperty(controllerContext, bindingContext, propertyDescriptor);
             }
+            //model validate
+            ModelMetadata metadata = ModelMetadataProviders.Current.GetMetadataForType(() => model, modelType);
+            MyCompositeModelValidator validator = new MyCompositeModelValidator(metadata, controllerContext);
+            foreach (ModelValidationResult result in validator.Validate(null))
+            {
+                string key = (bindingContext.ModelName ?? "") + "." + (result.MemberName ?? "");
+                controllerContext.Controller.ViewData.ModelState.AddModelError(key.Trim('.'), result.Message);
+            }
             return model;
         }
 
@@ -273,7 +281,27 @@ namespace WebAppMyModelBinder.Customs
                 propertyValue = null;
             }
             context.ModelMetadata.Model = propertyValue;
+            // add isRequired validate
+            if (null == propertyValue)
+            {
+                this.ValidataRequiredPropertyValue(controllerContext, bindingContext, metadata, propertyValue);
+            }
             propertyDescriptor.SetValue(bindingContext.Model, propertyValue);
+        }
+
+        private void ValidataRequiredPropertyValue(ControllerContext controllerContext, ModelBindingContext bindingContext, ModelMetadata metadata, object propertyValue)
+        {
+            string key = (bindingContext.ModelName ?? "") + "." + (metadata.PropertyName ?? "");
+            key = key.Trim('.');
+            ModelStateDictionary modelState = bindingContext.ModelState;
+            ModelValidator validator = ModelValidatorProviders.Providers.GetValidators(metadata, controllerContext).FirstOrDefault(v => v.IsRequired);
+            if (null != validator)
+            {
+                foreach (ModelValidationResult result in validator.Validate(bindingContext.Model))
+                {
+                    modelState.AddModelError(key, result.Message);
+                }
+            }
         }
 
         private object BindSimpleModel(ControllerContext controllerContext, ModelBindingContext bindingContext, ValueProviderResult valueProviderResult)
