@@ -39,6 +39,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8.ModelValidation", "8.Mode
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppModelValidation", "8.ModelValidation\WebAppModelValidation\WebAppModelValidation.csproj", "{E3FC2525-F2C2-4BCF-B66E-57EC8A31EE1A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppParameterValidate", "8.ModelValidation\WebAppParameterValidate\WebAppParameterValidate.csproj", "{CA21FB99-78DC-40E9-892C-714AC3BC1D76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -89,6 +91,10 @@ Global
 		{E3FC2525-F2C2-4BCF-B66E-57EC8A31EE1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3FC2525-F2C2-4BCF-B66E-57EC8A31EE1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3FC2525-F2C2-4BCF-B66E-57EC8A31EE1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA21FB99-78DC-40E9-892C-714AC3BC1D76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA21FB99-78DC-40E9-892C-714AC3BC1D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA21FB99-78DC-40E9-892C-714AC3BC1D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA21FB99-78DC-40E9-892C-714AC3BC1D76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,5 +111,6 @@ Global
 		{B0188FE8-0448-4C32-8407-6B1B0EF831A6} = {23B06EF9-1B0B-458F-ADB7-B3F6FC01B77A}
 		{FD3A0A0B-F483-40F0-B8FC-A51F7099942D} = {9D55312D-51F4-4303-B78F-2730563252BA}
 		{E3FC2525-F2C2-4BCF-B66E-57EC8A31EE1A} = {4DE93F1E-FB18-4966-9B3A-46E921BD5347}
+		{CA21FB99-78DC-40E9-892C-714AC3BC1D76} = {4DE93F1E-FB18-4966-9B3A-46E921BD5347}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,13 @@
+﻿@model WebAppParameterValidate.Models.Person
+
+@{
+    ViewBag.Title = "Person";
+}
+
+<h2>@Request.RequestContext.RouteData.GetRequiredString("action")</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    <input type="submit" value="save" />
+}
