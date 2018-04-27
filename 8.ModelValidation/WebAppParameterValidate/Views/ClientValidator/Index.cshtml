@@ -1,0 +1,19 @@
+﻿@model WebAppParameterValidate.Models.DemoModel
+
+@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<script type="text/javascript" src="~/Scripts/jquey-1.10.2.js"></script>
+<script type="text/javascript" src="~/Scripts/jquey.validate.js"></script>
+<script type="text/javascript" src="~/Scripts/jquey.validate.unobtrusive.js"></script>
+<script type="text/javascript" src="~/Scripts/jquey.validate.extend.js"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    <input type="submit" value="save" />
+}

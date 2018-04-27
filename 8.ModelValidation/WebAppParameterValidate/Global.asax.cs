@@ -24,14 +24,14 @@ namespace WebAppParameterValidate
             //}
             //ModelValidatorProviders.Providers.Add(new ParameterValidationModelValidatorProvider());
 
-            DataAnnotationsModelValidatorProvider validatorProvider = ModelValidatorProviders.Providers
-                .OfType<DataAnnotationsModelValidatorProvider>()
-                .FirstOrDefault();
-            if (null != validatorProvider)
-            {
-                ModelValidatorProviders.Providers.Remove(validatorProvider);
-            }
-            ModelValidatorProviders.Providers.Add(new RuleBasedValidatorProvider());
+            //DataAnnotationsModelValidatorProvider validatorProvider = ModelValidatorProviders.Providers
+            //    .OfType<DataAnnotationsModelValidatorProvider>()
+            //    .FirstOrDefault();
+            //if (null != validatorProvider)
+            //{
+            //    ModelValidatorProviders.Providers.Remove(validatorProvider);
+            //}
+            //ModelValidatorProviders.Providers.Add(new RuleBasedValidatorProvider());
         }
     }
 }

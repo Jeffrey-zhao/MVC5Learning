@@ -103,6 +103,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.extend.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -112,9 +113,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClientValidatorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ModelMultiplyAttributeController.cs" />
     <Compile Include="Controllers\RuleBasedController.cs" />
+    <Compile Include="Customs\AgeRangeAttribute.cs" />
     <Compile Include="Customs\ParameterValidationAsynActionInvoker.cs" />
     <Compile Include="Customs\ParameterValidationActionInvoker.cs" />
     <Compile Include="Customs\ParameterValidationModelBinder.cs" />
@@ -124,6 +127,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DemoModel.cs" />
     <Compile Include="Models\OperationData.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,6 +140,7 @@
     <Content Include="Views\Home\Add.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\ModelMultiplyAttribute\Person.cshtml" />
+    <Content Include="Views\ClientValidator\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
