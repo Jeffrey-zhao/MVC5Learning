@@ -14,9 +14,9 @@ namespace WebAppFilter.Controllers
         // GET: Home
         public void Index()
         {
-            Response.Write($"Controller.User:{this.User.Identity.Name}");
-            Response.Write($"HttpContext.User:{this.ControllerContext.HttpContext.User.Identity.Name}");
-            Response.Write($"Thread.CurrentPrincipal.User:{Thread.CurrentPrincipal.Identity.Name}");
+            Response.Write($"Controller.User:{this.User.Identity.Name}<br/>");
+            Response.Write($"HttpContext.User:{this.ControllerContext.HttpContext.User.Identity.Name}<br/>");
+            Response.Write($"Thread.CurrentPrincipal.User:{Thread.CurrentPrincipal.Identity.Name}<br/>");
             //return View();
         }
     }

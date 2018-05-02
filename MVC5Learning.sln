@@ -47,7 +47,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppAction", "10.Action\W
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11.Filter", "11.Filter", "{B0FB37B6-3F4C-4211-8AE3-1447458A71D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppFilter", "WebAppFilter\WebAppFilter.csproj", "{9C41FEF2-255F-4D7E-8DFE-34796AAE6889}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppFilter", "11.Filter\WebAppFilter\WebAppFilter.csproj", "{9C41FEF2-255F-4D7E-8DFE-34796AAE6889}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
