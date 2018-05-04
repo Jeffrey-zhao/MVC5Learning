@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace WebAppFilter.Customs
 {
-    [AttributeUsage(AttributeTargets.Method|AttributeTargets.Class,AllowMultiple =false)]
+    [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, AllowMultiple = false)]
     public abstract class FilterBaseAttribute : FilterAttribute, IActionFilter
     {
         public virtual void OnActionExecuted(ActionExecutedContext filterContext)
