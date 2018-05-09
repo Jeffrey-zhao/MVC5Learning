@@ -49,6 +49,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11.Filter", "11.Filter", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppFilter", "11.Filter\WebAppFilter\WebAppFilter.csproj", "{9C41FEF2-255F-4D7E-8DFE-34796AAE6889}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12.View", "12.View", "{20E61DB7-C643-4C7C-8D81-9495DE98212E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppView", "12.View\WebAppView\WebAppView.csproj", "{7193A7FB-F53B-4244-9528-609DF62F8FBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +115,10 @@ Global
 		{9C41FEF2-255F-4D7E-8DFE-34796AAE6889}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C41FEF2-255F-4D7E-8DFE-34796AAE6889}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C41FEF2-255F-4D7E-8DFE-34796AAE6889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7193A7FB-F53B-4244-9528-609DF62F8FBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7193A7FB-F53B-4244-9528-609DF62F8FBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7193A7FB-F53B-4244-9528-609DF62F8FBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7193A7FB-F53B-4244-9528-609DF62F8FBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -130,6 +138,7 @@ Global
 		{CA21FB99-78DC-40E9-892C-714AC3BC1D76} = {4DE93F1E-FB18-4966-9B3A-46E921BD5347}
 		{74979E8B-4B04-4097-93C6-D5F42779D500} = {EF5B209B-C37E-4ADD-B6C8-B008FF4F2567}
 		{9C41FEF2-255F-4D7E-8DFE-34796AAE6889} = {B0FB37B6-3F4C-4211-8AE3-1447458A71D1}
+		{7193A7FB-F53B-4244-9528-609DF62F8FBA} = {20E61DB7-C643-4C7C-8D81-9495DE98212E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.ExceptionHandling.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.ExceptionHandling.Logging.6.0.1304.0\lib\NET45

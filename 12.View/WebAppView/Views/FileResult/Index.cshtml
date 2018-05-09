@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Image</h2>
+<style type="text/css">
+    img{width:100px;height:100px;}
+</style>
+<ul>
+    <li><img alt="1" src="@Url.Action("Image",new { id = 1 })" /></li>
+    <li><img alt="1" src="@Url.Action("Image",new { id = 2 })" /></li>
+    <li><img alt="1" src="@Url.Action("Image",new { id = 3 })" /></li>
+    <li><img alt="1" src="@Url.Action("Image",new { id = 4 })" /></li>
+</ul>
+<script type="text/javascript" src="@Url.Action("JavaScript")"></script>
+<script type="text/javascript" src="@Url.Content("OtherJavaScript")"></script>

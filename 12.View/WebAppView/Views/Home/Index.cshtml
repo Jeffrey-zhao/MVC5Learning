@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<link type="text/css" rel="stylesheet" href="@Url.Action("Css")"/>
+@using (Html.BeginForm())
+{
+    string theme = ViewBag.Theme.ToString();
+    @Html.RadioButton("theme","Default",theme=="Default")<span>默认主题（主题）</span><br/>
+    @Html.RadioButton("theme", "Theme1", theme == "Theme1")<span>默认主题（主题）</span><br />
+    @Html.RadioButton("theme", "Theme2", theme == "Theme2")<span>默认主题（主题）</span><br />
+    <input type="submit" value="保存"/>
+}
